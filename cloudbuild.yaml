@@ -4,7 +4,9 @@ steps:
     args: ["test", "calculadora"]
     env: ["GOPATH=."]
 
-  - id: "Executando aplicação..."
-    name: "gcr.io/cloud-builders/go"
-    args: ["run", "calculadora"]
-    env: ["GOPATH=."]
+  - id: "Fazendo build da imagem..."
+    name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/desafio-ci:latest", "."]
+
+images:
+  - "gcr.io/$PROJECT_ID/desafio-ci:latest"
