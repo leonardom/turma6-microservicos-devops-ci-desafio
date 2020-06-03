@@ -1,10 +1,10 @@
 steps:
-  - id: go_test
+  - id: "Rodando testes..."
     name: "gcr.io/cloud-builders/go"
     args: ["test", "calculadora"]
     env: ["GOPATH=."]
 
-  - id: go_run
+  - id: "Executando aplicação..."
     name: "gcr.io/cloud-builders/go"
     args: ["run", "calculadora"]
     env: ["GOPATH=."]
